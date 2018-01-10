@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>flex容器的属性</title>
+</head>
+<style type="text/css">
+	*{
+		padding: 0;
+		margin: 0;
+	}
+	body{
+		background: #ccc;
+	}
+	.container{
+		width: 998px;
+		margin: 0 auto;
+		
+	}
+	.container .big-title{
+		padding: 10px 0;
+		text-align: center;
+		border-bottom: 1px solid #fff;
+	}
+	.meaning{
+		display: block;
+		margin: 10px;
+		padding: 10px;
+		background:#000;
+		color: #fff;
+	}
+</style>
+<body>
+	<div class="container">
+		<h1 class="big-title">flex容器的属性</h1>
+		<style type="text/css">
+			.order{
+				padding:20px;
+			}
+			.order .title{
+				margin-bottom: 10px;
+				border-bottom: 1px solid #000;
+			}
+			.order .box-container{
+				display: flex;
+				padding:10px;
+				border:1px dashed #333;
+			}
+			.order .box-container div{
+				width:50px;
+				height:50px;
+				border-radius: 50%;
+				background: #666;
+				line-height:50px;
+				text-align: center;
+				color:#fff;
+			}
+			.order .box-container .box{
+				order:1;
+			}
+			.order .box-container .box4{
+				order:-1;
+			}
+			.order .tips{
+				display: block;
+				padding:10px;
+			}
+		</style>
+		<div class="order">
+			<h1 class="title">order</h1>
+			<span class="meaning">
+			定义项目的排列顺序。数值越小，排列越靠前，默认为0。order属性用于更改在主轴方向上排列顺序。给每一项进行编号排序。
+			</span>
+			<div class="box-container">
+				<div class="box">0</div>
+				<div class="box1">1</div>
+				<div class="box2">2</div>
+				<div class="box3">3</div>
+				<div class="box4">4</div>
+			</div>
+			<span class="tips">
+				此处给box0的编号为1，给box4的编号为-1，其他项默认为0，所以box4排到第一。
+			</span>
+		</div>
+
+			<style type="text/css">
+					.flex-grow{
+						padding:20px;
+					}
+					.flex-grow .title{
+						margin-bottom: 10px;
+						border-bottom: 1px solid #000;
+					}
+					.flex-grow .box-container{
+						display: flex;
+						padding:10px;
+						border:1px dashed #333;
+					}
+					.flex-grow .box-container div{
+						width:50px;
+						height:50px;
+						border-radius: 50%;
+						background: #666;
+						line-height:50px;
+						text-align: center;
+						color:#fff;
+					}
+					.flex-grow .box-container .box2{
+						flex-grow: 1;
+					}
+					.flex-grow .tips{
+						display: block;
+						padding:10px;
+					}
+			</style>	
+			<div class="flex-grow">
+				<h1 class="title">flex-grow</h1>
+				<span class="meaning">
+					定义项目的放大比例，默认为0，即如果存在剩余空间，也不放大。
+				</span>
+					<div class="box-container">
+						<div class="box">0</div>
+						<div class="box1">1</div>
+						<div class="box2">2</div>
+						<div class="box3">3</div>
+						<div class="box4">4</div>
+					</div>
+					<span class="tips">
+						如果所有项目的flex-grow属性都为1，则它们将等分剩余空间（如果有的话）。如果一个项目的flex-grow属性为2，其他项目都为1，则前者占据的剩余空间将比其他项多一倍。
+						如果一个项目的flex-grow属性为1，其他项目为0，则该项目会占满剩余空间。
+					</span>
+				</div>
+		
+			<style type="text/css">
+				.flex-shrink{
+						padding:20px;
+					}
+					.flex-shrink .title{
+						margin-bottom: 10px;
+						border-bottom: 1px solid #000;
+					}
+					.flex-shrink .box-container{
+						display: flex;
+						width: 200px;
+						padding:10px 0;
+						border:1px dashed #333;
+					}
+					.flex-shrink .box-container div{
+						width:50px;
+						height:50px;
+						border-radius: 50%;
+						background: #666;
+						line-height:50px;
+						text-align: center;
+						color:#fff;
+					}
+					.flex-shrink .box-container .box2{
+						flex-shrink: 0;
+					}
+					.flex-shrink .tips{
+						display: block;
+						padding:10px;
+					}
+			</style>
+			<div class="flex-shrink">
+				<h1 class="title">flex-shrink</h1>
+				<span class="meaning">
+					定义了项目的缩小比例，默认为1，即如果空间不足，该项目将缩小。
+				</span>
+				<div class="box-container">
+						<div class="box">0</div>
+						<div class="box1">1</div>
+						<div class="box2">2</div>
+						<div class="box3">3</div>
+						<div class="box4">4</div>
+					</div>
+					<span class="tips">
+					如果所有项目的flex-shrink属性都为1，当空间不足时，都将等比例缩小。如果一个项目的flex-shrink属性为0，其他项目都为1，则空间不足时，前者不缩小。
+					负值对该属性无效。此处给box2设置了flex-shrink:0;
+					</span>
+			</div>
+
+				<style type="text/css">
+						.flex-basis{
+							padding:20px;
+						}
+						.flex-basis .title{
+							margin-bottom: 10px;
+							border-bottom: 1px solid #000;
+						}
+						.flex-basis .box-container{
+							display: flex;
+							height:270px;
+							/*padding:10px;*/
+							border:1px dashed #333;
+						}
+						.flex-basis .box-container div{
+							border-radius: 50%;
+							background: #666;
+							text-align: center;
+							color:#fff;
+						}
+						.flex-basis .align-items-desc{
+							margin:20px 0;
+						}
+						.flex-basis .box-container .box{
+							width:50px;
+							height:50px;
+							line-height:50px;
+						}
+						.flex-basis .box-container .box1{
+							width:50px;
+							height:100px;
+							line-height:100px;
+						}
+						.flex-basis .box-container .box2{
+							width:50px;
+							height:70px;
+							line-height:70px;
+						}
+						.flex-basis .box-container .box3{
+							flex-basis:300px;
+							height:25px;
+							line-height:25px;
+						}
+						.flex-basis .box-container .box4{
+							width:50px;
+						}
+						.flex-basis .tips{
+							display: block;
+							padding:10px;
+						}
+				</style>
+			<div class="flex-basis">
+				<h1 class="title">flex-basis</h1>
+				<span class="meaning">
+					定义了在分配多余空间之前，项目占据的主轴空间（main size）。浏览器根据这个属性，计算主轴是否有多余空间。它的默认值为auto，即项目的本来大小。
+				</span>
+				<div class="box-container">
+						<div class="box">0</div>
+						<div class="box1">1</div>
+						<div class="box2">2</div>
+						<div class="box3">3</div>
+						<div class="box4">4</div>
+					</div>
+					<span class="tips">
+						它可以设为跟width或height属性一样的值（比如350px），则项目将占据固定空间。此处给box3设置flex-basis:300px;
+					</span>
+			</div>
+					<style type="text/css">
+						.align-self{
+							padding:20px;
+						}
+						.align-self .title{
+							margin-bottom: 10px;
+							border-bottom: 1px solid #000;
+						}
+						.align-self .box-container{
+							display: flex;
+							flex-wrap: wrap;
+							width:270px;
+							height:270px;
+							/*padding:10px;*/
+							border:1px dashed #333;
+						}
+						.align-self .box-container div{
+							border-radius: 50%;
+							background: #666;
+							width: 50px;
+							height: 50px;
+							line-height: 50px;
+							text-align: center;
+							color:#fff;
+						}
+						.align-self .align-self-desc{
+							margin:20px 0;
+						}
+						.align-self .box-container .box{
+							width:50px;
+							height:50px;
+							line-height:50px;
+						}
+						.align-self .box-container .box1{
+							width:50px;
+							height:100px;
+							line-height:100px;
+						}
+						.align-self .box-container .box2{
+							width:50px;
+							height:70px;
+							line-height:70px;
+						}
+						.align-self .box-container .box3{
+							width:50px;
+							height: auto;
+							line-height:25px;
+						}
+						.align-self .box-container .box4{
+							width:50px;
+						}
+						.align-self .tips{
+							display: block;
+							padding:10px;
+						}
+			</style>
+			<div class="align-self">
+				<h1 class="title">align-self</h1>
+				<span class="meaning">
+					align-self属性允许单个项目有与其他项目不一样的对齐方式，可覆盖align-items属性。默认值为auto，表示继承父元素的align-items属性，如果没有父元素，则等同于stretch。
+				</span>
+				<div class="box-container">
+						<div class="box">0</div>
+						<div class="box1">1</div>
+						<div class="box2">2</div>
+						<div class="box3">3</div>
+						<div class="box4">4</div>
+					</div>
+					<div class="align-self-desc">
+						<input type="radio" name="align-self" value="flex-start" checked><span class="text">flex-start:与交叉轴的起点对齐</span><br>
+						<input type="radio" name="align-self" value="flex-end"><span class="text">flex-end:与交叉轴的终点对齐</span><br>
+						<input type="radio" name="align-self" value="center"><span class="text">center：与交叉轴的中点对齐</span><br>
+						<input type="radio" name="align-self" value="baseline"><span class="text">baseline：项目的第一行文字的基线对齐</span><br>
+						<input type="radio" name="align-self" value="auto"><span class="text">auto：继承父元素的align-items属性</span><br>
+						<input type="radio" name="align-self" value="stretch"><span class="text">stretch：如果项目未设置高度或设为auto，将占满整个容器的高度</span><br>
+					</div>
+					<span class="tips">
+						该属性可能取6个值，除了auto，其他都与align-items属性完全一致。
+					</span>
+				</div>
+
+			</div>
+	
+</body>
+<script type="text/javascript">
+var container=document.querySelector('div.container');
+var box3=document.querySelector('div.align-self>div.box-container>div.box3');
+	container.addEventListener('click',function(e){
+		var target=e.target;
+		var radioStyle=target.name;
+		if(target.type==='radio'){
+			box3.style[radioStyle]=target.value;
+		
+		}
+		
+	});
+
+</script>
+</html>

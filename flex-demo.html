@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>flex容器的属性</title>
+</head>
+<style type="text/css">
+	*{
+		padding: 0;
+		margin: 0;
+	}
+	body{
+		background: #ccc;
+	}
+	.container{
+		width: 998px;
+		margin: 0 auto;
+		
+	}
+	.container .big-title{
+		padding: 10px 0;
+		text-align: center;
+		border-bottom: 1px solid #fff;
+	}
+	.meaning{
+		display: block;
+		margin: 10px;
+		padding: 10px;
+		background:#000;
+		color: #fff;
+	}
+</style>
+<body>
+	<div class="container">
+		<h1 class="big-title">flex容器的属性</h1>
+		<style type="text/css">
+			.flex-direction{
+				padding:20px;
+			}
+			.flex-direction .title{
+				margin-bottom: 10px;
+				border-bottom: 1px solid #000;
+			}
+			.flex-direction .box-container{
+				display: flex;
+				padding:10px;
+				border:1px dashed #333;
+			}
+			.flex-direction .box-container div{
+
+				width:50px;
+				height:50px;
+				border-radius: 50%;
+				background: #666;
+				line-height:50px;
+				text-align: center;
+				color:#fff;
+			}
+			.flex-direction .flex-direction-desc{
+				margin:20px 0;
+			}
+		</style>
+		<div class="flex-direction">
+			<h1 class="title">flex-direction</h1>
+			<span class="meaning">
+				决定主轴的方向（即项目的排列方向）
+			</span>
+			<div class="box-container">
+				<div class="box">0</div>
+				<div class="box1">1</div>
+				<div class="box2">2</div>
+				<div class="box3">3</div>
+				<div class="box4">4</div>
+			</div>
+			<div class="flex-direction-desc">
+				<input type="radio" name="flex-direction" value="row" checked><span class="text">row:主轴为水平方向，起点在左端</span><br>
+				<input type="radio" name="flex-direction" value="row-reverse"><span class="text">row-reverse：主轴为水平方向，起点在右端</span><br>
+				<input type="radio" name="flex-direction" value="column"><span class="text">column：主轴为垂直方向，起点在上沿</span><br>
+				<input type="radio" name="flex-direction" value="column-reverse"><span class="text">column-reverse：主轴为垂直方向，起点在下沿</span><br>
+			</div>
+		</div>
+
+			<style type="text/css">
+				.flex-wrap{
+						padding:20px;
+					}
+					.flex-wrap .title{
+						margin-bottom: 10px;
+						border-bottom: 1px solid #000;
+					}
+					.flex-wrap .box-container{
+						display: flex;
+						width:200px;
+						padding:10px;
+						border:1px dashed #333;
+					}
+					.flex-wrap .box-container div{
+						width:50px;
+						height:50px;
+						border-radius: 50%;
+						background: #666;
+						line-height:50px;
+						text-align: center;
+						color:#fff;
+					}
+					.flex-wrap .flex-wrap-desc{
+						margin:20px 0;
+					}
+			</style>	
+			<div class="flex-wrap">
+				<h1 class="title">flex-wrap</h1>
+				<span class="meaning">
+					决定项目是否换行
+				</span>
+					<div class="box-container">
+						<div class="box">0</div>
+						<div class="box1">1</div>
+						<div class="box2">2</div>
+						<div class="box3">3</div>
+						<div class="box4">4</div>
+					</div>
+					<div class="flex-wrap-desc">
+						<input type="radio" name="flex-wrap" value="nowrap" checked><span class="text">nowrap:不换行</span><br>
+						<input type="radio" name="flex-wrap" value="wrap"><span class="text">wrap：换行，第一行在上方</span><br>
+						<input type="radio" name="flex-wrap" value="wrap-reverse"><span class="text">wrap-reverse：换行，第一行在下方</span><br>
+					</div>
+				</div>
+		
+			<style type="text/css">
+				.justify-content{
+						padding:20px;
+					}
+					.justify-content .title{
+						margin-bottom: 10px;
+						border-bottom: 1px solid #000;
+					}
+					.justify-content .box-container{
+						display: flex;
+						padding:10px 0;
+						border:1px dashed #333;
+					}
+					.justify-content .box-container div{
+						width:50px;
+						height:50px;
+						border-radius: 50%;
+						background: #666;
+						line-height:50px;
+						text-align: center;
+						color:#fff;
+					}
+					.justify-content .flex-wrap-desc{
+						margin:20px 0;
+					}
+			</style>
+			<div class="justify-content">
+				<h1 class="title">justify-content</h1>
+				<span class="meaning">
+					定义了项目在主轴上的对齐方式
+				</span>
+				<div class="box-container">
+						<div class="box">0</div>
+						<div class="box1">1</div>
+						<div class="box2">2</div>
+						<div class="box3">3</div>
+						<div class="box4">4</div>
+					</div>
+					<div class="justify-content-desc">
+						<input type="radio" name="justify-content" value="flex-start" checked><span class="text">flex-start:左对齐</span><br>
+						<input type="radio" name="justify-content" value="flex-end"><span class="text">flex-end:右对齐</span><br>
+						<input type="radio" name="justify-content" value="center"><span class="text">center：居中</span><br>
+						<input type="radio" name="justify-content" value="space-between"><span class="text">space-between：两端对齐，项目之间的间隔都相等</span><br>
+						<input type="radio" name="justify-content" value="space-around"><span class="text">space-around：每个项目两侧的间隔相等。所以，项目之间的间隔比项目与边框的间隔大一倍</span><br>
+					</div>
+			</div>
+
+				<style type="text/css">
+					.align-items{
+							padding:20px;
+						}
+						.align-items .title{
+							margin-bottom: 10px;
+							border-bottom: 1px solid #000;
+						}
+						.align-items .box-container{
+							display: flex;
+							height:270px;
+							/*padding:10px;*/
+							border:1px dashed #333;
+						}
+						.align-items .box-container div{
+							border-radius: 50%;
+							background: #666;
+							text-align: center;
+							color:#fff;
+						}
+						.align-items .align-items-desc{
+							margin:20px 0;
+						}
+						.align-items .box-container .box{
+							width:50px;
+							height:50px;
+							line-height:50px;
+						}
+						.align-items .box-container .box1{
+							width:50px;
+							height:100px;
+							line-height:100px;
+						}
+						.align-items .box-container .box2{
+							width:50px;
+							height:70px;
+							line-height:70px;
+						}
+						.align-items .box-container .box3{
+							width:50px;
+							height:25px;
+							line-height:25px;
+						}
+						.align-items .box-container .box4{
+							width:50px;
+						}
+			</style>
+			<div class="align-items">
+				<h1 class="title">align-items</h1>
+				<span class="meaning">
+					定义项目在交叉轴上如何对齐
+				</span>
+				<div class="box-container">
+						<div class="box">0</div>
+						<div class="box1">1</div>
+						<div class="box2">2</div>
+						<div class="box3">3</div>
+						<div class="box4">4</div>
+					</div>
+					<div class="align-items-desc">
+						<input type="radio" name="align-items" value="flex-start" checked><span class="text">flex-start:交叉轴的起点对齐</span><br>
+						<input type="radio" name="align-items" value="flex-end"><span class="text">flex-end:交叉轴的终点对齐</span><br>
+						<input type="radio" name="align-items" value="center"><span class="text">center：交叉轴的中点对齐</span><br>
+						<input type="radio" name="align-items" value="baseline"><span class="text">baseline：项目的第一行文字的基线对齐</span><br>
+						<input type="radio" name="align-items" value="stretch"><span class="text">stretch：如果项目未设置高度或设为auto，将占满整个容器的高度</span><br>
+					</div>
+				</div>
+					<style type="text/css">
+					.align-content{
+							padding:20px;
+						}
+						.align-content .title{
+							margin-bottom: 10px;
+							border-bottom: 1px solid #000;
+						}
+						.align-content .box-container{
+							display: flex;
+							flex-wrap: wrap;
+							width:270px;
+							height:270px;
+							/*padding:10px;*/
+							border:1px dashed #333;
+						}
+						.align-content .box-container div{
+							border-radius: 50%;
+							background: #666;
+							width: 50px;
+							height: 50px;
+							line-height: 50px;
+							text-align: center;
+							color:#fff;
+						}
+						.align-content .align-content-desc{
+							margin:20px 0;
+						}
+						.align-content .box-container .box{
+							width:50px;
+							height:50px;
+							line-height:50px;
+						}
+						.align-content .box-container .box1{
+							width:50px;
+							height:100px;
+							line-height:100px;
+						}
+						.align-content .box-container .box2{
+							width:50px;
+							height:70px;
+							line-height:70px;
+						}
+						.align-content .box-container .box3{
+							width:50px;
+							height:25px;
+							line-height:25px;
+						}
+						.aalign-content .box-container .box4{
+							width:50px;
+						}
+			</style>
+			<div class="align-content">
+				<h1 class="title">align-content</h1>
+				<span class="meaning">
+					定义了多根轴线的对齐方式。如果项目只有一根轴线，该属性不起作用
+				</span>
+				<div class="box-container">
+						<div class="box">0</div>
+						<div class="box1">1</div>
+						<div class="box2">2</div>
+						<div class="box3">3</div>
+						<div class="box4">4</div>
+						<div>5</div>
+						<div>6</div>
+						<div>7</div>
+						<div>8</div>
+						<div>9</div>
+						<div>10</div>
+						<div>11</div>
+						<div>12</div>
+						<div>13</div>
+						<div>14</div>
+					</div>
+					<div class="align-content-desc">
+						<input type="radio" name="align-content" value="flex-start" checked><span class="text">flex-start:与交叉轴的起点对齐</span><br>
+						<input type="radio" name="align-content" value="flex-end"><span class="text">flex-end:与交叉轴的终点对齐</span><br>
+						<input type="radio" name="align-content" value="center"><span class="text">center：与交叉轴的中点对齐</span><br>
+						<input type="radio" name="align-content" value="space-between"><span class="text">space-between：与交叉轴两端对齐，轴线之间的间隔平均分布</span><br>
+						<input type="radio" name="align-content" value="space-around"><span class="text">space-around：每根轴线两侧的间隔都相等。所以，轴线之间的间隔比轴线与边框的间隔大一倍</span><br>
+						<input type="radio" name="align-content" value="stretch"><span class="text">stretch：轴线占满整个交叉轴</span><br>
+					</div>
+				</div>
+
+			</div>
+	
+</body>
+<script type="text/javascript">
+var container=document.querySelector('div.container');
+	container.addEventListener('click',function(e){
+		var target=e.target;
+		var radioStyle=target.name;
+		if(target.type==='radio'){
+			var prevNode=target.parentNode.previousElementSibling;
+			prevNode.style[radioStyle]=target.value;
+		
+		}
+		
+	});
+
+</script>
+</html>
